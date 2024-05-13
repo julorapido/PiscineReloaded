@@ -6,7 +6,7 @@
 /*   By: jsaintho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:59:45 by jsaintho          #+#    #+#             */
-/*   Updated: 2024/05/13 16:33:30 by jsaintho         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:14:04 by jsaintho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 void	ft_putstr(char *str)
@@ -16,7 +16,7 @@ void	ft_putstr(char *str)
 	i = 0;
 	while (str[i])
 	{
-		ft_putchar(&str[i]);
+		ft_putchar(str[i]);
 		i++;
 	}
 }

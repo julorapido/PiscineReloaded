@@ -6,7 +6,7 @@
 /*   By: jsaintho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:05:11 by jsaintho          #+#    #+#             */
-/*   Updated: 2024/05/13 14:05:24 by jsaintho         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:20:20 by jsaintho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -23,10 +23,10 @@ int	main(int argc, char **argv)
 		j = 0;
 		while (argv[i][j] != '\0')
 		{
-			write(1, &argv[i][j], 1);
+			ft_putchar(argv[i][j]);
 			j++;
 		}
-		write(1, "\n", 1);
+		ft_putchar('\n');
 		i++;
 	}
 	return (0);
