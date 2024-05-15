@@ -6,17 +6,17 @@
 /*   By: jsaintho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:20:58 by jsaintho          #+#    #+#             */
-/*   Updated: 2024/05/13 16:35:24 by jsaintho         ###   ########.fr       */
+/*   Updated: 2024/05/15 10:53:49 by jsaintho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+void	ft_putchar(char c);
 
 void	ft_print_alphabet(void)
 {
 	char	a;
 
 	a = 'a';
-	while (a < 'z')
+	while (a <= 'z')
 	{
 		ft_putchar(a);
 		a++;

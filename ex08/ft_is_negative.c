@@ -6,15 +6,15 @@
 /*   By: jsaintho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:28:16 by jsaintho          #+#    #+#             */
-/*   Updated: 2024/05/13 17:21:20 by jsaintho         ###   ########.fr       */
+/*   Updated: 2024/05/15 12:05:11 by jsaintho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+void	ft_putchar(char c);
 
 void	ft_is_negative(int n)
 {
 	if (n < 0)
-		ft_putchar('Y');
-	else
 		ft_putchar('N');
+	else
+		ft_putchar('P');
 }

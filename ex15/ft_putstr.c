@@ -6,9 +6,11 @@
 /*   By: jsaintho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:59:45 by jsaintho          #+#    #+#             */
-/*   Updated: 2024/05/13 17:14:04 by jsaintho         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:08:31 by jsaintho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+void	ft_putchar(char c);
+
 void	ft_putstr(char *str)
 {
 	int	i;

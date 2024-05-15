@@ -6,49 +6,37 @@
 /*   By: jsaintho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:21:33 by jsaintho          #+#    #+#             */
-/*   Updated: 2024/05/13 14:56:48 by jsaintho         ###   ########.fr       */
+/*   Updated: 2024/05/15 12:22:44 by jsaintho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <unistd.h>
+#include <fcntl.h>
 
-void	display_file(char *f_name)
+void	disp_file(int fd)
 {
-	int		fd;
-	int		i;
-	size_t	byte_read;
-	char	buffer[32000];
-
-	fd = open(f_name, O_RDONLY);
-	byte_read = read(fd, buffer, sizeof(buffer));
-	if (byte_read == -1 || fd == NULL)
-	{
-		write(2, "Cannot read file.", 18);
-		return ;
-	}
-	i = 0;
-	while (buffer[i] != '\0')
-	{
-		write(1, &buffer[i], 1);
-		i++;
-	}
-	close (fd);
+	char	buffer;
+	
+	while (read(fd, &buffer, 1) != 0)
+		write(1, &buffer, 1);
 }
 
-int	main(int argc, char **argv)
+int	main(int ac, char **av)
 {
-	if (argc == 1)
+	int	fd;
+
+	if (ac != 2)
 	{
-		write(2, "File name missing.", 18);
+		if (ac > 2)
+			write(2, "Too many arguments.\n", 20);
+		if (ac < 2)
+			write(2, "File name missing.\n", 19);
+		return (1);
 	}
-	else if (argc > 2)
-	{
-		write(2, "Too many arguments.", 19);
-	}
-	else
-		display_file(argv[1]);
+	fd = open(av[1], O_RDONLY);
+	disp_file(fd);
+	close(fd);
 	return (0);
 }

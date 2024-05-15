@@ -6,10 +6,10 @@
 /*   By: jsaintho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:05:11 by jsaintho          #+#    #+#             */
-/*   Updated: 2024/05/13 17:20:20 by jsaintho         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:12:20 by jsaintho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+void	ft_putchar(char c);
 
 int	main(int argc, char **argv)
 {

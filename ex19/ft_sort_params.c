@@ -6,16 +6,13 @@
 /*   By: jsaintho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:06:11 by jsaintho          #+#    #+#             */
-/*   Updated: 2024/05/13 14:06:23 by jsaintho         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:17:24 by jsaintho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 #include <stdio.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 int	ft_strcmp(char *s1, char *s2)
 {
