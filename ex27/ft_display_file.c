@@ -6,7 +6,7 @@
 /*   By: jsaintho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:21:33 by jsaintho          #+#    #+#             */
-/*   Updated: 2024/05/15 12:22:44 by jsaintho         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:17:39 by jsaintho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -18,7 +18,7 @@
 void	disp_file(int fd)
 {
 	char	buffer;
-	
+
 	while (read(fd, &buffer, 1) != 0)
 		write(1, &buffer, 1);
 }
