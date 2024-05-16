@@ -6,37 +6,35 @@
 /*   By: jsaintho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 14:21:33 by jsaintho          #+#    #+#             */
-/*   Updated: 2024/05/15 16:17:39 by jsaintho         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:59:15 by jsaintho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>
 
-void	disp_file(int fd)
+void	display(char *filename)
 {
-	char	buffer;
+	int		file;
+	char	character;
 
-	while (read(fd, &buffer, 1) != 0)
-		write(1, &buffer, 1);
+	file = open(filename, O_RDONLY);
+	if (file == -1 || !filename)
+	{
+		write(2, "Cannot read file.\n", 18);
+		return ;
+	}
+	while (read(file, &character, 1))
+		write(1, &character, 1);
+	close(file);
 }
 
-int	main(int ac, char **av)
+int	main(int argc, char *argv[])
 {
-	int	fd;
-
-	if (ac != 2)
-	{
-		if (ac > 2)
-			write(2, "Too many arguments.\n", 20);
-		if (ac < 2)
-			write(2, "File name missing.\n", 19);
-		return (1);
-	}
-	fd = open(av[1], O_RDONLY);
-	disp_file(fd);
-	close(fd);
+	if (argc == 1)
+		write(2, "File name missing.\n", 19);
+	else if (argc > 2)
+		write(2, "Too many arguments.\n", 20);
+	else
+		display(argv[1]);
 	return (0);
 }
